@@ -15,12 +15,11 @@ app.use(express.json());
 
 
 var exphbs = require("express-handlebars");
-
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 
-
-require("./controllers/burgers_controller")(app);
+var routes = require("./controllers/burgers_controller");
+app.use(routes);
 
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {

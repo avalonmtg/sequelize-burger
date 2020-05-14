@@ -1,4 +1,4 @@
-  
+ const Sequelize = require("sequelize");
 module.exports = function(sequelize, DataTypes) {
   var burger = sequelize.define("burger", {
 
@@ -10,6 +10,9 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.BOOLEAN,
         defaultValue: false,
     },
+
+    createdAt: Sequelize.DATE,
+    updatedAt: Sequelize.DATE,
   });
 
      return burger;
