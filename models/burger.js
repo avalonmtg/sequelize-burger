@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
 
     devoured: {
         type: DataTypes.BOOLEAN,
-        defaultValue: false,
+        defaultValue: 0,
     },
 
     createdAt: Sequelize.DATE,
